@@ -37,12 +37,12 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/hycos/cnetworkvmap.git
+        <connection>scm:git:git://github.com/hycos/cnetwork-api.git
         </connection>
         <developerConnection>
-            scm:git:ssh://github.com:hycos/cnetworkvmap.git
+            scm:git:ssh://github.com:hycos/cnetwork-api.git
         </developerConnection>
-        <url>https://github.com/hycos/cnetworkvmap/tree/master</url>
+        <url>https://github.com/hycos/cnetwork-api/tree/master</url>
     </scm>
 
     <distributionManagement>
