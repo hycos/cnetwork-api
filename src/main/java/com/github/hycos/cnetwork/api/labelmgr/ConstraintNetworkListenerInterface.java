@@ -22,7 +22,7 @@ import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
 /**
  * Interface to react to certain constraint network events
- * @param <T>
+ * @param <T> node interface
  */
 public interface ConstraintNetworkListenerInterface<T extends NodeInterface> {
 

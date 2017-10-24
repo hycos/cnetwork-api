@@ -17,6 +17,7 @@
 
 package com.github.hycos.cnetwork.api.domctrl;
 
+
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
 public interface Domain {
@@ -25,7 +26,7 @@ public interface Domain {
     boolean isAlwaysTrue();
     boolean isAlwaysFalse();
     void setTrue() throws InconsistencyException;
-    void setFalse();
+    void setFalse() throws InconsistencyException;
 
     Domain intersect(Domain other);
     boolean isEmpty();
