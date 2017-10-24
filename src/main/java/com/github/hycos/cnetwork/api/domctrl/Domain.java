@@ -43,6 +43,8 @@ public interface Domain {
     boolean isVariable();
     boolean isConstraint();
 
+    boolean isNegative();
+
     String getLabel();
 
     Domain clone();

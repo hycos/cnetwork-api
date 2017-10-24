@@ -20,8 +20,11 @@ package com.github.hycos.cnetwork.api;
 import com.github.hycos.cnetwork.api.domctrl.DomainKind;
 
 public interface NodeKindInterface {
-    String getDesc();
+
     boolean isSanitizer();
+    boolean isThreatModel();
+
+
     boolean isComparative();
     boolean isEquality();
     boolean isInequality();
@@ -31,11 +34,11 @@ public interface NodeKindInterface {
     boolean isNumeric();
     boolean isBoolean();
     boolean isString();
-    boolean isThreatModel();
     boolean isRegex();
     boolean isVariable();
     boolean isOperand();
     DomainKind getDomainKind();
     String getValue();
+    String getDesc();
 
 }
