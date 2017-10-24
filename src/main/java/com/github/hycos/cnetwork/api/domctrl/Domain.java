@@ -1,8 +1,8 @@
 /*
- * polyglot - translate constraints in between different formats
+ * cnetwork-api - a constraint network api
  * Copyright (C) 2017 Julian Thome <julian.thome.de@gmail.com>
  *
- * polyglot is licensed under the EUPL, Version 1.1 or – as soon
+ * cnetwork-api is licensed under the EUPL, Version 1.1 or – as soon
  * they will be approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence"); You may not use this work except in compliance with the
  * Licence. You may obtain a copy of the Licence at:
@@ -43,7 +43,7 @@ public interface Domain {
     boolean isVariable();
     boolean isConstraint();
 
-    String getDotLabel();
+    String getLabel();
 
     Domain clone();
 
