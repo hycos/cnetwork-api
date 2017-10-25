@@ -34,6 +34,7 @@ public interface Domain {
     String toString();
 
     SubDomainInterface getSubDomain(String subdomain);
+    void setSubDomain(SubDomainInterface s);
 
     boolean isLiteral();
     boolean isRegex();
