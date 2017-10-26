@@ -54,7 +54,7 @@ public interface NodeInterface extends ConstraintNetworkItemInterface {
     boolean isEquality();
     boolean isInequality();
 
-    void setDomainController(DomainControllerInterface<NodeInterface> dctrl);
+    void setDomainController(DomainControllerInterface dctrl);
 
     JavaMethodSignature getSig();
 

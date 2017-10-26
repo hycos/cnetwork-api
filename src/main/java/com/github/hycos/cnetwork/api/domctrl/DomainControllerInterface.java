@@ -34,6 +34,5 @@ public interface DomainControllerInterface<T extends NodeInterface>  extends
             DomainControllerException;
     boolean hasDomain(T n);
     Domain createDomainFor(T n);
-    Domain getDomainFor(T n);
     DomainControllerInterface<T> clone();
 }
