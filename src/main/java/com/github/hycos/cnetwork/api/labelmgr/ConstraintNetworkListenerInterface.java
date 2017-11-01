@@ -28,7 +28,7 @@ public interface ConstraintNetworkListenerInterface<T extends NodeInterface> {
 
     void onNodeCollapse(T toReplace, T replacement) throws InconsistencyException;
     void onNodeDelete(T n);
-    void onNodeAdd(T n) throws InconsistencyException;
+    void onNodeAdd(T n, boolean isConstraint) throws InconsistencyException;
     void onConstraintAdd(T n) throws InconsistencyException;
     void onConnectionAdd(T frst, T snd);
     void update(T n) throws InconsistencyException;

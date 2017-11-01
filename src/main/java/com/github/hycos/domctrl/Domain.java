@@ -15,24 +15,40 @@
  * specific language governing permissions and limitations under the Licence.
  */
 
-package com.github.hycos.cnetwork.api.domctrl;
+package com.github.hycos.domctrl;
 
 
-import com.github.hycos.cnetwork.api.NodeInterface;
-import com.github.hycos.cnetwork.api.domctrl.exception.DomainControllerException;
-import com.github.hycos.cnetwork.api.labelmgr.ConstraintNetworkListenerInterface;
+import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
-/**
- * control the interaction between the cnetwork and
- * the domain Interface
- */
-public interface DomainControllerInterface<T extends NodeInterface>  extends
-        ConstraintNetworkListenerInterface<T> {
-    Domain getDomain(T n) throws
-            DomainControllerException;
-    void setDomain(T n, Domain dom) throws
-            DomainControllerException;
-    boolean hasDomain(T n);
-    Domain createDomainFor(T n);
-    DomainControllerInterface<T> clone();
+public interface Domain {
+
+
+    boolean isAlwaysTrue();
+    boolean isAlwaysFalse();
+    void setTrue() throws InconsistencyException;
+    void setFalse() throws InconsistencyException;
+
+    Domain intersect(Domain other);
+    boolean isEmpty();
+
+    String toString();
+
+    SubDomainInterface getSubDomain(String subdomain);
+    void setSubDomain(SubDomainInterface s);
+
+    boolean isLiteral();
+    boolean isRegex();
+    boolean isString();
+    boolean isNumeric();
+    boolean isBoolean();
+    boolean isVariable();
+    boolean isConstraint();
+
+    boolean isNegative();
+
+    String getLabel();
+
+    Domain clone();
+
+    DomainKind getKind();
 }

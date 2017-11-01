@@ -15,40 +15,19 @@
  * specific language governing permissions and limitations under the Licence.
  */
 
-package com.github.hycos.cnetwork.api.domctrl;
+package com.github.hycos.domctrl;
+
+public class Term {
 
 
-import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
+    private static class TermNode {
+        private String op;
+        private Term left;
+        private Term right;
+    }
 
-public interface Domain {
+
+    
 
 
-    boolean isAlwaysTrue();
-    boolean isAlwaysFalse();
-    void setTrue() throws InconsistencyException;
-    void setFalse() throws InconsistencyException;
-
-    Domain intersect(Domain other);
-    boolean isEmpty();
-
-    String toString();
-
-    SubDomainInterface getSubDomain(String subdomain);
-    void setSubDomain(SubDomainInterface s);
-
-    boolean isLiteral();
-    boolean isRegex();
-    boolean isString();
-    boolean isNumeric();
-    boolean isBoolean();
-    boolean isVariable();
-    boolean isConstraint();
-
-    boolean isNegative();
-
-    String getLabel();
-
-    Domain clone();
-
-    DomainKind getKind();
 }

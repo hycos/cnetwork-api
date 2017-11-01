@@ -15,19 +15,24 @@
  * specific language governing permissions and limitations under the Licence.
  */
 
-package com.github.hycos.cnetwork.api.domctrl;
-
-public class Term {
+package com.github.hycos.domctrl;
 
 
-    private static class TermNode {
-        private String op;
-        private Term left;
-        private Term right;
-    }
+import com.github.hycos.cnetwork.api.NodeInterface;
+import com.github.hycos.domctrl.exception.DomainControllerException;
+import com.github.hycos.cnetwork.api.labelmgr.ConstraintNetworkListenerInterface;
 
-
-    
-
-
+/**
+ * control the interaction between the cnetwork and
+ * the domain Interface
+ */
+public interface DomainControllerInterface<T extends NodeInterface>  extends
+        ConstraintNetworkListenerInterface<T> {
+    Domain getDomain(T n) throws
+            DomainControllerException;
+    void setDomain(T n, Domain dom) throws
+            DomainControllerException;
+    boolean hasDomain(T n);
+    Domain createDomainFor(T n);
+    DomainControllerInterface<T> clone();
 }

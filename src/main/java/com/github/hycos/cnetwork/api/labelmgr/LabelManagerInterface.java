@@ -34,6 +34,5 @@ public interface LabelManagerInterface<T extends NodeInterface> extends
     String getLabelForNode(T n);
     void setLabelForNode(T n, String lbl);
     NodeInterface infer(T n) throws InconsistencyException;
-
     LabelManagerInterface<T> clone();
 }

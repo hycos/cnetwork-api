@@ -17,9 +17,10 @@
 
 package com.github.hycos.cnetwork.api;
 
-import com.github.hycos.cnetwork.api.domctrl.Domain;
-import com.github.hycos.cnetwork.api.domctrl.DomainControllerInterface;
-import com.github.hycos.cnetwork.api.domctrl.Term;
+import com.github.hycos.cnetwork.api.labelmgr.LabelManagerInterface;
+import com.github.hycos.domctrl.Domain;
+import com.github.hycos.domctrl.DomainControllerInterface;
+import com.github.hycos.domctrl.Term;
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 import com.github.hycos.cnetwork.sig.JavaMethodSignature;
 
@@ -55,8 +56,10 @@ public interface NodeInterface extends ConstraintNetworkItemInterface {
     boolean isInequality();
 
     void setDomainController(DomainControllerInterface dctrl);
+    void setLabelManager(LabelManagerInterface dctrl);
 
     JavaMethodSignature getSig();
+    void setSig(JavaMethodSignature sig);
 
     NodeKindInterface getKind();
     void setKind(NodeKindInterface n);

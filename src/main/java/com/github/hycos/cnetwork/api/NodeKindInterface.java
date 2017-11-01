@@ -17,7 +17,7 @@
 
 package com.github.hycos.cnetwork.api;
 
-import com.github.hycos.cnetwork.api.domctrl.DomainKind;
+import com.github.hycos.domctrl.DomainKind;
 
 public interface NodeKindInterface {
     boolean isSanitizer();

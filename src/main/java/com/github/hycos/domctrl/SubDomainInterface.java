@@ -1,8 +1,8 @@
 /*
- * cnetwork-api - a constraint network api
+ * cnetwork - a constraint network implementation for Java
  * Copyright (C) 2017 Julian Thome <julian.thome.de@gmail.com>
  *
- * cnetwork-api is licensed under the EUPL, Version 1.1 or – as soon
+ * cnetwork is licensed under the EUPL, Version 1.1 or – as soon
  * they will be approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence"); You may not use this work except in compliance with the
  * Licence. You may obtain a copy of the Licence at:
@@ -15,12 +15,30 @@
  * specific language governing permissions and limitations under the Licence.
  */
 
-package com.github.hycos.cnetwork.api.domctrl.exception;
+package com.github.hycos.domctrl;
 
-public class DomainControllerException extends Exception {
 
-    public DomainControllerException(String msg) {
-        super(msg);
-    }
+public interface SubDomainInterface<T> extends Cloneable {
+
+
+    T intersect(T y);
+    T union(T y);
+    T minus(T y);
+
+    boolean subsumes(T y);
+    boolean isSingleton();
+    boolean isEmpty();
+
+    T complement();
+
+    String getDomainName();
+
+    @Override
+    String toString();
+
+    @Override
+    boolean equals(Object o);
+
+    T clone();
 
 }

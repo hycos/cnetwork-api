@@ -15,8 +15,11 @@
  * specific language governing permissions and limitations under the Licence.
  */
 
-package com.github.hycos.cnetwork.api.domctrl;
+package com.github.hycos.domctrl;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public enum DomainKind {
 
@@ -29,6 +32,8 @@ public enum DomainKind {
     STRING_LOWER(6, "string_lower"),
     STRING_TRIMMED(7, "string_trimmed"),
     BOOLEAN(8,"boolean");
+
+    final static Logger LOGGER = LoggerFactory.getLogger(DomainKind.class);
 
     private final String sval;
     private final int ival;
@@ -68,6 +73,7 @@ public enum DomainKind {
     }
 
     public boolean isBoolean() {
+        //LOGGER.debug("BOOOL");
         return this == BOOLEAN;
     }
 
