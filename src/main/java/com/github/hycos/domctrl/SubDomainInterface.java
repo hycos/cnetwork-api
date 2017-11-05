@@ -28,6 +28,7 @@ public interface SubDomainInterface<T> extends Cloneable {
     boolean subsumes(T y);
     boolean isSingleton();
     boolean isEmpty();
+    boolean isNull();
 
     T complement();
 
