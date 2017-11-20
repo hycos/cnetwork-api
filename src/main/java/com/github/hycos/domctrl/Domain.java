@@ -20,11 +20,17 @@ package com.github.hycos.domctrl;
 
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
-public interface Domain {
+import java.util.Collection;
+import java.util.Set;
 
+public interface Domain {
 
     boolean isAlwaysTrue();
     boolean isAlwaysFalse();
+
+    void taint(Collection<Integer> id);
+    Set<Integer> getTaints();
+
     void setTrue() throws InconsistencyException;
     void setFalse() throws InconsistencyException;
 
