@@ -1,5 +1,7 @@
 package com.github.hycos.cnetwork.api;
 
-public interface NodeKindFactoryInterface {
+import java.io.Serializable;
+
+public interface NodeKindFactoryInterface extends Serializable {
     NodeKindInterface getNodeKindFromString(String s);
 }

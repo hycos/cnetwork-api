@@ -19,7 +19,9 @@ package com.github.hycos.cnetwork.api;
 
 import com.github.hycos.domctrl.DomainKind;
 
-public interface NodeKindInterface {
+import java.io.Serializable;
+
+public interface NodeKindInterface extends Serializable {
     boolean isSanitizer();
     boolean isThreatModel();
     boolean isComparative();

@@ -20,10 +20,11 @@ package com.github.hycos.domctrl;
 
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
 
-public interface Domain {
+public interface Domain extends Serializable {
 
     boolean isAlwaysTrue();
     boolean isAlwaysFalse();

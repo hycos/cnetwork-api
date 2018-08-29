@@ -17,5 +17,7 @@
 
 package com.github.hycos.cnetwork.api;
 
-public interface EdgeKindInterface {
+import java.io.Serializable;
+
+public interface EdgeKindInterface extends Serializable {
 }

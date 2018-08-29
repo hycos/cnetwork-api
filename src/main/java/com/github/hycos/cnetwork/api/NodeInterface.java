@@ -18,11 +18,11 @@
 package com.github.hycos.cnetwork.api;
 
 import com.github.hycos.cnetwork.api.labelmgr.LabelManagerInterface;
+import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
+import com.github.hycos.cnetwork.sig.JavaMethodSignature;
 import com.github.hycos.domctrl.Domain;
 import com.github.hycos.domctrl.DomainControllerInterface;
 import com.github.hycos.domctrl.Term;
-import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
-import com.github.hycos.cnetwork.sig.JavaMethodSignature;
 
 public interface NodeInterface extends ConstraintNetworkItemInterface {
 

@@ -17,7 +17,9 @@
 
 package com.github.hycos.cnetwork.api;
 
-public interface ConstraintNetworkItemInterface {
+import java.io.Serializable;
+
+public interface ConstraintNetworkItemInterface extends Serializable {
 
     int getId();
     @Override

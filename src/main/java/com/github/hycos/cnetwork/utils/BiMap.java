@@ -20,6 +20,10 @@ package com.github.hycos.cnetwork.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,18 +32,22 @@ import java.util.Map;
  * @param <K> key
  * @param <V> value
  */
-public class BiMap<K,V> {
+public class BiMap<K,V> implements Serializable {
+
+    private static final long serialVersionUID = -41231103412L;
 
     final static Logger LOGGER = LoggerFactory.getLogger(BiMap.class);
 
-    protected Map<K,V> keytoval = new HashMap<>();
-    protected Map<V,K> valtokey = new HashMap<>();
+    protected Map<K,V> keytoval = null;
+    protected Map<V,K> valtokey = null;
 
     public BiMap(){
-
+       this.keytoval = new HashMap<>();
+       this.valtokey = new HashMap<>();
     }
 
     public BiMap(BiMap other) {
+        this();
         this.keytoval.putAll(other.keytoval);
         this.valtokey.putAll(other.valtokey);
     }
@@ -85,7 +93,7 @@ public class BiMap<K,V> {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append("keytoval: =======\n");
+        sb.append("\nkeytoval: =======\n");
         for (Map.Entry<K, V> e : keytoval.entrySet()) {
             sb.append(" .. ");
             sb.append(e.getKey());
@@ -109,5 +117,19 @@ public class BiMap<K,V> {
         return sb.toString();
 
     }
+
+    private void writeObject(ObjectOutputStream oos)
+            throws IOException {
+
+        oos.writeObject(keytoval);
+        oos.writeObject(valtokey);
+    }
+
+    private void readObject(ObjectInputStream ois)
+            throws ClassNotFoundException, IOException {
+        keytoval = (Map<K,V>)ois.readObject();
+        valtokey = (Map<V,K>)ois.readObject();
+    }
+
 
 }

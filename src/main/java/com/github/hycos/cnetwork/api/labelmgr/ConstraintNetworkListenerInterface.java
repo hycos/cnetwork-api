@@ -20,11 +20,14 @@ package com.github.hycos.cnetwork.api.labelmgr;
 import com.github.hycos.cnetwork.api.NodeInterface;
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
+import java.io.Serializable;
+
 /**
  * Interface to react to certain constraint network events
  * @param <T> node interface
  */
-public interface ConstraintNetworkListenerInterface<T extends NodeInterface> {
+public interface ConstraintNetworkListenerInterface<T extends NodeInterface>
+        extends Serializable {
 
     void onNodeCollapse(T toReplace, T replacement) throws InconsistencyException;
     void onNodeDelete(T n);
