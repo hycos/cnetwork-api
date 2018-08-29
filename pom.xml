@@ -26,6 +26,10 @@
         <surefire.version>2.22.0</surefire.version>
     </properties>
 
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Constraint network api</description>
+    <url>https://github.com/hycos/cnetwork-api</url>
+
     <licenses>
         <license>
             <name>EUPL</name>
