@@ -21,7 +21,7 @@
         <junit.version>5.0.1</junit.version>
         <dkbrics.version>1.11-8</dkbrics.version>
         <inmemantlr.version>1.6</inmemantlr.version>
-        <regex2smtlib.version>1.0-SNAPSHOT</regex2smtlib.version>
+        <regex2smtlib.version>1.0</regex2smtlib.version>
         <maven.compiler.version>3.8.0</maven.compiler.version>
         <jacoco.version>0.8.1</jacoco.version>
         <surefire.version>2.22.0</surefire.version>
