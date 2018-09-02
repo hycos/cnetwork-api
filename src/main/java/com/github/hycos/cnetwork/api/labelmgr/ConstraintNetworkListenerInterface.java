@@ -17,6 +17,7 @@
 
 package com.github.hycos.cnetwork.api.labelmgr;
 
+import com.github.hycos.cnetwork.api.EdgeInterface;
 import com.github.hycos.cnetwork.api.NodeInterface;
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 
@@ -26,17 +27,19 @@ import java.io.Serializable;
  * Interface to react to certain constraint network events
  * @param <T> node interface
  */
-public interface ConstraintNetworkListenerInterface<T extends NodeInterface>
+public interface ConstraintNetworkListenerInterface<T extends NodeInterface, K extends EdgeInterface>
         extends Serializable {
 
     void onNodeCollapse(T toReplace, T replacement) throws InconsistencyException;
     void onNodeDelete(T n);
+    void beforeNodeAdd(T n, boolean isConstraint) throws InconsistencyException;
     void onNodeAdd(T n, boolean isConstraint) throws InconsistencyException;
     void onConstraintAdd(T n) throws InconsistencyException;
-    void onConnectionAdd(T frst, T snd);
+    void beforeConnectionAdd(T frst, T snd, K e);
+    void onConnectionAdd(T frst, T snd, K e);
     void update(T n) throws InconsistencyException;
     void attach(T n);
-
     void register(ConstraintNetworkInterface<T> c);
 
+    ConstraintNetworkListenerInterface<T, K> clone();
 }

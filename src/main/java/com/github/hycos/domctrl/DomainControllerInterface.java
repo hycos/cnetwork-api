@@ -18,6 +18,7 @@
 package com.github.hycos.domctrl;
 
 
+import com.github.hycos.cnetwork.api.EdgeInterface;
 import com.github.hycos.cnetwork.api.NodeInterface;
 import com.github.hycos.domctrl.exception.DomainControllerException;
 import com.github.hycos.cnetwork.api.labelmgr.ConstraintNetworkListenerInterface;
@@ -26,13 +27,13 @@ import com.github.hycos.cnetwork.api.labelmgr.ConstraintNetworkListenerInterface
  * control the interaction between the cnetwork and
  * the domain Interface
  */
-public interface DomainControllerInterface<T extends NodeInterface>  extends
-        ConstraintNetworkListenerInterface<T> {
+public interface DomainControllerInterface<T extends NodeInterface, K extends EdgeInterface>  extends
+        ConstraintNetworkListenerInterface<T,K> {
     Domain getDomain(T n) throws
             DomainControllerException;
     void setDomain(T n, Domain dom) throws
             DomainControllerException;
     boolean hasDomain(T n);
     Domain createDomainFor(T n);
-    DomainControllerInterface<T> clone();
+    DomainControllerInterface<T, K> clone();
 }

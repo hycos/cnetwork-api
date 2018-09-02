@@ -17,10 +17,12 @@
 
 package com.github.hycos.cnetwork.api.cchecktinf;
 
+import com.github.hycos.cnetwork.api.EdgeInterface;
 import com.github.hycos.cnetwork.api.NodeInterface;
 import com.github.hycos.cnetwork.api.labelmgr.ConstraintNetworkInterface;
 
-public interface ConsistencyCheckerInterface<T extends NodeInterface> {
+public interface ConsistencyCheckerInterface<T extends NodeInterface,
+        K extends EdgeInterface> {
     boolean check(ConstraintNetworkInterface<T> cb, T n);
-    ConsistencyCheckerInterface<T> clone();
+    ConsistencyCheckerInterface<T, K> clone();
 }

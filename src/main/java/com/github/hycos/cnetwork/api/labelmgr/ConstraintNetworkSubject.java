@@ -17,6 +17,7 @@
 
 package com.github.hycos.cnetwork.api.labelmgr;
 
+import com.github.hycos.cnetwork.api.EdgeInterface;
 import com.github.hycos.cnetwork.api.NodeInterface;
 import com.github.hycos.cnetwork.api.labelmgr.exception.InconsistencyException;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class ConstraintNetworkSubject<T extends NodeInterface> {
     final static Logger LOGGER = LoggerFactory.getLogger(ConstraintNetworkSubject.class);
 
 
-    private Set<ConstraintNetworkListenerInterface<T>> observers = new
+    private Set<ConstraintNetworkListenerInterface<T, EdgeInterface>> observers = new
             HashSet<>();
 
     public void attach(ConstraintNetworkListenerInterface observer){
