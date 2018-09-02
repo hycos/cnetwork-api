@@ -32,7 +32,7 @@ public interface ConstraintNetworkListenerInterface<T extends NodeInterface, K e
 
     void onNodeCollapse(T toReplace, T replacement) throws InconsistencyException;
     void onNodeDelete(T n);
-    void beforeNodeAdd(T n, boolean isConstraint) throws InconsistencyException;
+    void beforeNodeAdd(T n) throws InconsistencyException;
     void onNodeAdd(T n, boolean isConstraint) throws InconsistencyException;
     void onConstraintAdd(T n) throws InconsistencyException;
     void beforeConnectionAdd(T frst, T snd, K e);
